@@ -66,3 +66,5 @@ SELECT
 FROM fact_trips
 GROUP BY payment_type
 ORDER BY average_tip_percentage DESC;
+
+-- END OF CUSTOMER ANALYSIS
