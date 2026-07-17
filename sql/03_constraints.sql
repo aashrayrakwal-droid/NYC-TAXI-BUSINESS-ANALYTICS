@@ -1,14 +1,20 @@
-ALTER TABLE taxi.fact_trips
+-- Description:
+-- Add foreign key constraints to enforce referential integrity between
+-- the fact table and dimension tables.
+--
+-- =============================================================================
+-- Vendor
+ALTER TABLE fact_trips
 ADD CONSTRAINT fk_vendor
 FOREIGN KEY (vendor_id)
-REFERENCES taxi.dim_vendor(vendor_id);
-
-ALTER TABLE taxi.fact_trips
-ADD CONSTRAINT fk_payment_type
+REFERENCES dim_vendor(vendor_id
+-- Payment
+ALTER TABLE fact_trips
+ADD CONSTRAINT fk_payment
 FOREIGN KEY (payment_type)
-REFERENCES taxi.dim_payment(payment_id)
-  
-ALTER TABLE taxi.fact_trips
-ADD CONSTRAINT fk_rate_code
-FOREIGN KEY (rate_code_id)
-REFERENCES taxi.dim_rate_code(rate_code_id);
+REFERENCES dim_payment(payment_id);
+-- Rate Code
+ALTER TABLE fact_trips
+ADD CONSTRAINT fk_ratecode
+FOREIGN KEY (ratecode_id)
+REFERENCES dim_ratecode(ratecode_id);
