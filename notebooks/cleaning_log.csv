@@ -1,0 +1,9 @@
+Rule_ID,Issue,Rows_Before,Rows_After,Rows_Removed
+DQ-05,Remove Duplicate Records,12748986,12748603,383
+DQ-05,Remove corrupted distances,12748603,12748427,176
+DQ-02,Remove invalid distances,12748427,12739376,9051
+DQ-07,Negative Trip Duration,12739376,12739079,297
+DQ-06,Impute Missing Improvement Surcharge,12739079,12739079,0
+DQ-06,Impute Missing Improvement Surcharge,12739079,12739079,0
+DQ-03,Flag the Negative Fare Records,12739079,12739079,0
+DQ-03,Flag the Negative Fare Records,12739079,12739079,0
