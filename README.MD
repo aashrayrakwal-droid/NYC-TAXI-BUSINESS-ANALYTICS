@@ -214,7 +214,7 @@ pip install -r requirements.txt
 
 ## 👤 Author
 
-**Aashray Rakwal**
+**Aashyra Rakwal**
 
 Mechanical Engineering Undergraduate | Delhi Technological University
 
