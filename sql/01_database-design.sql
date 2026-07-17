@@ -1,7 +1,7 @@
 /*
 ==========================================================
 Project  : NYC Taxi Analytics Platform
-Author   : Aashray Rakwal
+Author   : Aashyra Rakwal
 Database : PostgreSQL
 Purpose  : Database design for the NYC Taxi Analytics
            project.
