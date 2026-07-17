@@ -1,3 +1,6 @@
+-- Description:
+-- Create indexes to improve query performance for frequently filtered analytical columns.
+
 CREATE INDEX idx_fact_pickup_datetime
 ON taxi.fact_trips(pickup_datetime);
 
