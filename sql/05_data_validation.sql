@@ -1,3 +1,6 @@
+-- Description:
+-- Perform post-load validation checks to ensure data quality before business analysis.
+--
 -- VALIDATION 1 -  ROW COUNT
 SELECT count(*)  AS total_trips from taxi.fact_trips ;
 -- VALIDATION 2 DATE RANGE
@@ -10,7 +13,7 @@ SELECT count(*) AS negative_fares
 FROM taxi.fact_trips
 WHERE is_negative_fare = TRUE;
 
--- VALIDATION 4 
+-- VALIDATION 4 MISSING VENDOR ID
 SELECT vendor_id , count(*) AS trips 
 FROM taxi.fact_trips
 GROUP BY vendor_id
@@ -22,8 +25,13 @@ FROM taxi.fact_trips
 GROUP BY payment_type 
 ORDER BY payment_type ;
 
-SELECT ROUND(AVG(trip_distance) , 2) as avg_distance,
-       ROUND(AVG(fare_amount) , 2) as avg_fare,
-       ROUND(AVG(total_amount) , 2) as avg_total,
-       ROUND(AVG(trip_duration_minutes) , 2) as avg_duration
-FROM taxi.fact_trips;
+-- VALIDATION 6 VALID PASSENGER COUNT
+SELECT COUNT(*)
+FROM taxi.fact_trips
+WHERE passenger_count <= 0;
+
+-- VALIDATION 7 NEGATIVE TRIP DURATION
+SELECT COUNT(*)
+FROM taxi.fact_trips
+WHERE trip_duration < 0;
+
