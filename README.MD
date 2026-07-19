@@ -180,7 +180,8 @@ Summarizes key findings through executive-level insights including:
 
 ## Dashboard Preview
 
-Dashboard screenshots are available in the **images/** folder.
+The complete interactive Power BI dashboard is available from the **Releases** section of this repository.
+Dashboard preview images are included below.
 
 ---
 
