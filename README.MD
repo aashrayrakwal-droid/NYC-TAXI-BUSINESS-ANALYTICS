@@ -1,221 +1,243 @@
-# 🚖 NYC Taxi Business Analytics
+# 🚖 NYC Taxi Analytics Platform
 
-### End-to-End Data Analytics Project using Python, SQL, Excel, and Power BI
-
----
-
-## 📌 Project Overview
-
-This project presents an end-to-end data analytics workflow on the New York City Yellow Taxi Trip dataset. The objective is to transform raw transportation data into meaningful business insights by applying data profiling, cleaning, feature engineering, exploratory data analysis (EDA), SQL-based analytics, and interactive dashboard development.
-
-The project simulates a real-world business analytics scenario where large-scale trip data is processed to identify operational trends, passenger behavior, revenue patterns, and data quality issues. The final output consists of actionable insights supported by visualizations and an interactive Power BI dashboard.
+An end-to-end data analytics project built using Python, PostgreSQL, SQL, and Power BI to analyze over **12.7 million NYC Yellow Taxi trips**. The project demonstrates the complete analytics workflow—from raw data cleaning and feature engineering to data warehousing and interactive business intelligence dashboards.
 
 ---
 
-## 🎯 Business Problem
+## Project Overview
 
-Urban transportation services generate millions of trip records every month. However, raw operational data frequently contains missing values, duplicate records, inconsistent timestamps, invalid passenger counts, unrealistic fares, and incorrect trip distances.
+This project transforms raw NYC Taxi trip data into meaningful business insights through a modern analytics pipeline.
 
-Without proper data preparation, organizations cannot reliably answer important business questions such as:
+The workflow includes:
 
-- When is customer demand at its highest?
-- Which payment methods are most commonly used?
-- What factors influence trip revenue and tipping behavior?
-- How does trip distance impact fare amount?
-- What operational inefficiencies exist within the data?
-
-This project builds a complete analytics pipeline to clean, analyze, and visualize the dataset, enabling data-driven decision making through meaningful business insights.
+- Data cleaning and preprocessing using Python
+- Feature engineering for analytical reporting
+- Data warehousing in PostgreSQL using a star schema
+- Interactive dashboards in Power BI
+- Business insights and executive reporting
 
 ---
 
-## 📂 Dataset
+## Business Problem
 
-This project uses the **New York City Yellow Taxi Trip Records** dataset published by the NYC Taxi & Limousine Commission (TLC).
+Taxi operators generate millions of trip records every month. Raw transactional data alone provides limited value unless it is cleaned, structured, and analyzed.
 
-### Dataset Information
+The objective of this project is to:
 
-- Dataset: NYC Yellow Taxi Trip Records
-- Time Period: January 2015
-- Records Analyzed: ~12.7 Million Trips
-- Source: NYC TLC
-
-### Features Used
-
-- Pickup & Drop-off DateTime
-- Passenger Count
-- Trip Distance
-- Fare Amount
-- Tip Amount
-- Total Amount
-- Payment Type
-- Vendor ID
-- Pickup & Drop-off Coordinates
-
-### Data Quality Challenges
-
-- Missing values
-- Duplicate records
-- Invalid passenger counts
-- Negative trip durations
-- Unrealistic trip distances
-- Negative & zero fares
-- Outlier trips
-- Timestamp inconsistencies
+- Identify revenue trends
+- Analyze customer payment behavior
+- Study trip patterns
+- Monitor operational performance
+- Present executive-level insights through an interactive dashboard
 
 ---
 
-## 🔄 Project Workflow
+## Project Architecture
 
-```text
-Raw Dataset
-      │
-      ▼
-Data Profiling
-      │
-      ▼
-Data Cleaning
-      │
-      ▼
-Feature Engineering
-      │
-      ▼
-Exploratory Data Analysis
-      │
-      ▼
-SQL Business Analysis
-      │
-      ▼
-Power BI Dashboard
-      │
-      ▼
+```
+NYC TLC Dataset (.csv)
+        │
+        ▼
+Python
+(Data Cleaning & Feature Engineering)
+        │
+        ▼
+Clean Dataset
+        │
+        ▼
+PostgreSQL
+(Star Schema Data Warehouse)
+        │
+        ▼
+Power BI
+(DAX Measures & Interactive Dashboard)
+        │
+        ▼
 Business Insights
 ```
 
 ---
 
-## 🛠 Tech Stack
+## Technology Stack
 
-| Category | Technologies |
-|-----------|--------------|
+| Category | Tools |
+|----------|------|
 | Programming | Python |
-| Data Analysis | Pandas, NumPy |
-| Visualization | Matplotlib, Seaborn |
-| Business Intelligence | Power BI |
-| Database | SQL |
-| Spreadsheet | Microsoft Excel |
-| Development | Jupyter Notebook, VS Code |
-| Version Control | Git, GitHub |
+| Libraries | Pandas, NumPy |
+| Database | PostgreSQL |
+| Query Language | SQL |
+| Visualization | Power BI |
+| Version Control | Git & GitHub |
 
 ---
 
-## 📁 Project Structure
+## Dataset
 
-```text
-NYC-TAXI-BUSINESS-ANALYTICS/
+- Source: NYC Taxi & Limousine Commission (TLC)
+- Dataset: Yellow Taxi Trip Records
+- Time Period: January 2015
+- Records: ~12.7 Million Trips
+
+---
+
+## Data Engineering
+
+The raw dataset was processed using Python before loading into PostgreSQL.
+
+Cleaning included:
+
+- Removal of duplicate records
+- Removal of invalid trips
+- Handling missing values
+- Trip duration calculation
+- Pickup hour extraction
+- Pickup day extraction
+- Data quality validation
+- Feature engineering
+
+---
+
+## Database Design
+
+A star schema was implemented in PostgreSQL.
+
+Main tables:
+
+- Fact Trips
+- Dim Vendor
+- Dim Payment
+- Dim Rate Code
+
+This design enables efficient analytical queries and seamless integration with Power BI.
+
+---
+
+## Dashboard Pages
+
+### Executive Overview
+
+Provides a high-level snapshot of business performance.
+
+KPIs include:
+
+- Total Trips
+- Total Revenue
+- Average Fare
+- Average Distance
+- Average Trip Duration
+- Daily Revenue Trend
+- Revenue by Pickup Hour
+
+---
+
+### Customer & Payment Analysis
+
+Analyzes customer payment behavior and vendor performance.
+
+Includes:
+
+- Payment Type Distribution
+- Revenue by Vendor
+- Revenue by Payment Method
+- Average Fare by Rate Code
+
+---
+
+### Operations & Trip Analysis
+
+Explores operational trends throughout the day.
+
+Includes:
+
+- Average Trip Distance by Hour
+- Average Trip Duration by Hour
+- Revenue by Day of Week
+- Average Fare by Hour
+
+---
+
+### Executive Summary
+
+Summarizes key findings through executive-level insights including:
+
+- Top Revenue Day
+- Peak Demand Hour
+- Most Used Payment Method
+- Best Performing Vendor
+- Business Recommendations
+
+---
+
+## Key Outcomes
+
+- Processed approximately **12.7 million** NYC taxi trip records.
+- Built an end-to-end analytics pipeline using **Python, PostgreSQL, SQL, and Power BI**.
+- Designed a **star schema** to support efficient analytical queries.
+- Developed a **four-page interactive dashboard** with DAX measures and executive-level insights.
+- Transformed raw operational data into actionable business intelligence.
+
+---
+
+## Dashboard Preview
+
+Dashboard screenshots are available in the **images/** folder.
+
+---
+
+## Repository Structure
+
+```
+NYC-Taxi-Analytics-Platform/
 │
 ├── data/
-│   ├── raw/
-│   ├── cleaned/
-│   └── lookup/
-│
 ├── notebooks/
 ├── sql/
-├── powerbi/
-├── reports/
 ├── images/
-├── src/
-│
-├── README.md
+├── powerbi/
 ├── requirements.txt
-└── .gitignore
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-## 📊 Key Analysis Performed
+## How to Run
 
-- Data Profiling & Quality Assessment
-- Data Cleaning & Validation
-- Feature Engineering
+1. Clone the repository.
+2. Install dependencies.
+3. Execute the notebooks in order.
+4. Load the cleaned dataset into PostgreSQL.
+5. Run the SQL scripts.
+6. Connect Power BI to PostgreSQL.
+7. Refresh the dashboard.
+
+---
+
+## Key Skills Demonstrated
+
+- Data Cleaning
 - Exploratory Data Analysis
-- SQL-based Business Queries
-- Revenue Analysis
-- Passenger Trend Analysis
-- Payment Method Analysis
-- Trip Distance & Duration Analysis
-- Interactive Power BI Dashboard
+- Feature Engineering
+- SQL Querying
+- Data Warehousing
+- Star Schema Design
+- Power BI Dashboard Development
+- DAX Measures
+- Business Intelligence
+- Data Visualization
 
 ---
 
-## 💡 Key Business Insights
+## Future Improvements
 
-The analysis focuses on identifying operational and business trends, including:
-
-- Peak demand periods across different times
-- Passenger travel behavior
-- Distribution of payment methods
-- Relationship between trip distance and revenue
-- Fare and tipping patterns
-- Data quality issues affecting operational reporting
-- Revenue-driving trip characteristics
+- Real-time dashboard refresh
+- Predictive demand forecasting
+- Geospatial trip analysis
+- Time-series forecasting
+- Cloud deployment using Azure or AWS
 
 ---
 
-## 📈 Dashboard Preview
+## License
 
-The Power BI dashboard provides an interactive view of:
-
-- Revenue KPIs
-- Trip Volume Trends
-- Passenger Distribution
-- Payment Method Analysis
-- Distance & Duration Analysis
-- Fare Analysis
-
-> **Dashboard Preview**
-
-*(Add a screenshot here once the dashboard is completed.)*
-
-```text
-images/dashboard_preview.png
-```
-
----
-
-## ▶️ How to Run
-
-1. Clone the repository
-
-```bash
-git clone https://github.com/<your-username>/NYC-TAXI-BUSINESS-ANALYTICS.git
-```
-
-2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Open the notebooks in Jupyter Notebook or VS Code.
-
-4. Run the notebooks sequentially from Data Profiling to Dashboard Analysis.
-
----
-
-## 🚀 Future Improvements
-
-- Integrate multiple months of NYC Taxi data
-- Develop predictive demand forecasting models
-- Build automated ETL pipelines
-- Deploy an interactive web dashboard
-- Perform geospatial hotspot analysis
-
----
-
-## 👤 Author
-
-**Aashyra Rakwal**
-
-Mechanical Engineering Undergraduate | Delhi Technological University
-
-Interested in Data Analytics, Business Intelligence, and Machine Learning.
+This project is licensed under the MIT License.
